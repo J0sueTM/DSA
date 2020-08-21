@@ -6,12 +6,14 @@ A sequence of numbers is called "Arithmetic Progression" if the difference betwe
 
 ### Every A.P. must have
 
-**Initial Term** is the first number in the sequence
-**Common difference** is the value by which consecutive terms increase or decrease:
-    * positive, then the terms will grow towards positive infinity
-    * negative, then the terms will grow towards negative infinity
+- **Initial Term** is the first number in the sequence
 
-Example:
+- **Common difference** is the value by which consecutive terms increase or decrease:
+
+    * positive, then the terms will grow towards positive infinity
+        * negative, then the terms will grow towards negative infinity
+
+**Example**
 
 $$1 --> 4 --> --> 7 --> 10.$$
 
@@ -39,6 +41,7 @@ $$a_{n} = a_{1} + (n - 1)\times d.$$
 S = sum
 n = position of the nth number
 d = common difference
+n = range of sum
 ```
 
 $$S_{n} = \frac{n}{2}\times [2\times a + (n - 1)\times d].$$
