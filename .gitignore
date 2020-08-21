@@ -9,5 +9,11 @@
 " do not blacklist markdown files
 !*.md
 
+" do not blacklist python files"
+!*.py
+
+" do not blacklist java files
+!*.java
+
 " do not blacklist directories
 !*/
