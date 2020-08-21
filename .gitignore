@@ -3,11 +3,11 @@
 "blacklist everything
 *
 
-" do not blacklist everything that has an extension
-!*.*
+" do not blacklist cpp files
+!*.cpp
+
+" do not blacklist markdown files
+!*.md
 
 " do not blacklist directories
 !*/
-
-" blacklist c/cpp output files
-*.o
