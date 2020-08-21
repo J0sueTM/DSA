@@ -27,7 +27,7 @@ int main()
 
     //formula of Nth term of an A.P.
     //we can use any n variable, I'll use the last position, the size of the array
-    cout << arr[1] + (s - 1) * d << "\n";
+    cout << arr[0] + (s - 1) * d << "\n";
 
     //formula of forst Nth terms of an A.P.
     //we can use any n variable, I'll use the size of the array
