@@ -13,7 +13,7 @@ A sequence of numbers is called "Arithmetic Progression" if the difference betwe
 
 Example:
 
-$1 --> 4 --> --> 7 --> 10$
+$$1 --> 4 --> --> 7 --> 10.$$
 
 ```
 initial term = 1
@@ -31,7 +31,7 @@ n = position of the nth number
 d = common difference
 ```
 
-$a_{n} = a_{1} + (n - 1)\times d$
+$$a_{n} = a_{1} + (n - 1)\times d.$$
 
 **Sum of first N<sup>th</sup> terms of an A.P.**
 
@@ -41,4 +41,4 @@ n = position of the nth number
 d = common difference
 ```
 
-S_{n} = \frac{n}{2}\times [2\times a + (n - 1)\times d]
+$$S_{n} = \frac{n}{2}\times [2\times a + (n - 1)\times d].$$
