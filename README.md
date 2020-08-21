@@ -7,3 +7,5 @@ I'm currently using these sites and blogs:
 [Geeks-for-geeks](http://www.geeksforgeeks.org)
 
 [My-personal-trello-for-CP](https://trello.com/b/a7m8UZsw/cp)
+
+Note: there are a lot of latex math inside these documents, I recommend you to use a markdown intepreter along github's reader
