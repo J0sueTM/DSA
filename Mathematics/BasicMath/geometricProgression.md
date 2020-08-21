@@ -4,7 +4,7 @@ A sequence of numbers is called a "Geometric Progression" if the ratio of any tw
 
 * * *
 
-## Every G.P. must have
+### Every G.P. must have
 
 - **Initial term** is the first number of the sequence
 - **Common ratio** is the ratio between any two consecutive terms in the sequence
