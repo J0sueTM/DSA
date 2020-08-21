@@ -1,0 +1,13 @@
+" by J0sueTM for the project Competitive-Programming
+
+"blacklist everything
+*
+
+" do not blacklist everything that has an extension
+!*.*
+
+" do not blacklist directories
+!*/
+
+" blacklist c/cpp output files
+*.o
