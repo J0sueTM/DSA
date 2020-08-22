@@ -2,9 +2,7 @@
 
 A sequence of number is called "Fibonacci Sequence" if taken three consecutive numbers, a, b, c, the following happens:
 
-```
-c = a + b
-```
+![](https://quicklatex.com/cache3/fc/ql_6a66c1ac9a6382ee84faa7e26afe60fc_l3.png)
 
 * * *
 
@@ -14,4 +12,4 @@ c = a + b
 
 **Example**
 
-$$0 --> 1 --> 1 --> 2 --> 3 --> 5 --> 8.$$
+0 --> 1 --> 1 --> 2 --> 3 --> 5 --> 8

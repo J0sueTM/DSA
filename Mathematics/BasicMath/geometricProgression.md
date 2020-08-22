@@ -17,7 +17,7 @@ A sequence of numbers is called a "Geometric Progression" if the ratio of any tw
 
 **Example**
 
-$$110 --> 220 --> 440 --> 880 --> 1760.$$
+110 --> 220 --> 440 --> 880 --> 1760
 
 ```
 initial term = 110
@@ -35,7 +35,7 @@ r = common ratio
 n = position of nth term
 ```
 
-$$a_{n} = a_{1}\times r^{n - 1}.$$
+![](https://quicklatex.com/cache3/bf/ql_685f434b557878557322fd4bd63690bf_l3.png)
 
 **Sum of first N<sup>th</sup> terms of an G.P.**
 
@@ -46,4 +46,4 @@ a = sequence
 n = range of sum
 ```
 
-$$S_{n} = \frac{a\times(r^{n} - 1)}{r - 1}
+![](https://quicklatex.com/cache3/0c/ql_9c45627fa9251129981c7e27cb485d0c_l3.png)

@@ -10,7 +10,7 @@ A sequence of numbers is called a Harmonic Progression if the reciprocal of the 
 - **Common difference(between the reciprocals)** is the difference between the reciprocals of every two consecutive terms
 
 **Example**
-$$\frac{1}{5} --> \frac{1}{10} --> \frac{1}{15} --> \frac{1}{20}.$$
+![](https://quicklatex.com/cache3/56/ql_25794315d74416f8ec4c335bfc45d956_l3.png)
 
 ```
 initial term = 1/5
@@ -28,4 +28,4 @@ n = position of the nth term
 d = reciprocal common difference
 ```
 
-$$\frac{1}{a_{1} + (n - 1)\times d}.$$
+![](https://quicklatex.com/cache3/f8/ql_71096d6f0ca6286ec5b366b3d52371f8_l3.png)
