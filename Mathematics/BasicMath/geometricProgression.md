@@ -37,6 +37,14 @@ n = position of nth term
 
 ![](https://quicklatex.com/cache3/bf/ql_685f434b557878557322fd4bd63690bf_l3.png)
 
+```
+integer array = [2, 6, 18, 54]
+sort(array)
+integer r = array[1] / (array[0])
+
+write(array[0] * (power(r, n - 1)))
+```
+
 **Sum of first N<sup>th</sup> terms of an G.P.**
 
 ```
@@ -47,3 +55,11 @@ n = range of sum
 ```
 
 ![](https://quicklatex.com/cache3/0c/ql_9c45627fa9251129981c7e27cb485d0c_l3.png)
+
+```
+integer array = [2, 6, 18, 54]
+sort(array)
+integer r = array[1] / (array[0])
+
+write((array[0] * (power(r, n) - 1)) / (r - 1))
+```
