@@ -2,7 +2,7 @@
 
 Hi, this repository is being made by me, J0sueTM while I'm learning competitive programming concepts
 
-I'm currently using these sites and blogs:
+I'm currently using these sites, books and blogs:
 
 [Geeks-for-geeks](http://www.geeksforgeeks.org)
 
