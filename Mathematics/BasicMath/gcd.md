@@ -34,16 +34,16 @@ function gcd(integer a, integer b)
     return gcd(a, b - a)
 end
 
-integer a;
-integer b;
+integer a
+integer b
 
-input a;
-input b;
+input a
+input b
 
 write(gcd(a, b))
 ```
 
-**euclidean algorith**
+**euclidean algorithm**
 
 ```
 function gcd(integer a, integer b)
@@ -53,11 +53,11 @@ function gcd(integer a, integer b)
     return gcd(b, a % b)
 end
 
-integer a;
-integer b;
+integer a
+integer b
 
-input a;
-input b;
+input a
+input b
 
 write(gcd(a, b))
 ```
