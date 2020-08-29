@@ -8,4 +8,6 @@ I'm currently using these sites, books and blogs:
 
 [Competitive Programmer's handbook](https://cses.fi/book/book.pdf)
 
+[Competitive Programming Algorithms](https://cp-algorithms.com/)
+
 [My-personal-trello-for-CP](https://trello.com/b/a7m8UZsw/cp)
