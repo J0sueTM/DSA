@@ -1,6 +1,6 @@
 # Array
 
-An array is a collection of items stored at contiguous memory locatins. These items are of the same tipe. Each element can be found by hashing, i. e. each element has a number that represent their position/location at the array
+An array is a collection of items stored at contiguous memory locations. These items are of the same tipe. Each element can be found by hashing, i. e. each element has a number that represent their position/location at the array
 
 ```
 array[i] = {0, 1, 2, 3, 4 ... i - 1}
