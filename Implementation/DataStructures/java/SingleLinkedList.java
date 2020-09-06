@@ -9,7 +9,7 @@ class Node
     }
 }
 
-public class LinkedList
+public class SingleLinkedList
 {
     public static void insertAtStart(Node n, int value)
     {

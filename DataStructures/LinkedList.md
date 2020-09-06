@@ -207,3 +207,159 @@ Each step can be explained as following:
 - delete the current node (temp)
 
 ## Circular Linked List
+
+Circular Linked Lists are just like Single Linked Lists, the difference is that the last node is not pointing to null, but to another node within the linked list, which can be the head, the first node, or any other node
+
+### Creating a Circular Linked List
+
+```
+class Node
+    integer data
+    Node next = null
+
+    Node(integer data):
+        this.data = data
+end
+
+Node head = new Node(0)
+Node first = new Node(1)
+Node second = new Node(2)
+Node third = new Node(3)
+
+head.next = first
+first.next = second
+second.node = third
+third.next = head
+```
+
+At the end, we've created this:
+
+```
+head{0 | first} -> first{1 | second}
+
+       ↑                   ↓  
+
+third{3 | head} <- second{2 | third}
+```
+
+### Insert in a Circular Linked List
+
+```
+class Node
+    integer data
+    Node next = null
+
+    Node(integer data):
+        this.data = data
+end
+
+function insertAtKey(Node n, integer value, integer key):
+    if n.next is null:
+        return
+
+    Node temp = n.next
+    while temp is not n and temp.data is not key:
+        temp = temp.next
+
+    if temp is n:
+        return
+
+    Node newNode = newNode(value)
+    newNode.next = temp.next
+    temp.next = newNode
+end
+
+function printLinkedList(Node n):
+    if n is null:
+        return
+
+    write(n.data)
+    Node temp = n.next
+    while temp is not n:
+        write(temp.data)
+
+        temp = temp.next
+end
+
+Node head = new Node(0)
+Node first = new Node(1)
+Node second = new Node(2)
+Node third = new Node(3)
+
+head.next = first
+first.next = second
+second.next = third
+third.next = first
+
+insertAtKey(head, value, key)
+```
+
+Each step can be explained as follow:
+
+- Check if the given head node isn't null
+- Create node tehat stores the given head node
+- Iterate throughout the linked list, until the current temp node is the give head node, or the current temp node's data is the given key
+- Check if the current temp node is the given head node:
+    * cancel operation, a node that stores the given key wasn't found 
+- Create new node that stores the given value
+- turn the new node's pointer to the temp node
+- turn the temp node's pointer to the new node
+
+### delete node from circular linked list
+
+```
+class Node
+    integer data
+    Node next = null
+
+    Node(integer data)
+        this.data = data
+end
+
+function printLinkedList(Node n, integer key):
+    if n.next is null:
+        return
+
+    Node temp = n.next
+    Node prevTemp = temp
+    while temp is not n && temp.data is not key:
+        prevTemp = temp
+        temp = temp.next
+
+    if temp is n:
+        return
+
+    prevTemp.next = temp.next
+    temp.next = null
+
+    delete temp
+end
+
+Node head = new Node(0)
+Node first = new Node(1)
+Node second = new Node(2)
+Node third = new node(3)
+
+head.next = first
+first.next = second
+second.next = third
+third.next = head
+
+printLinkedList(head)
+
+removeAtKey(head, key)
+
+printLinkedList(head)
+```
+
+The steps can be explained as follow:
+
+- Check if the given head node's next isn't null:
+    * return
+- Create two nodes that stores the given head node
+- Iterate the linked list with the two create nodes untill the current temp node is the given head node, or the current temp node's data is the given key
+- Check if the current temp node is the given head node again:
+    * return
+- Turn prevTemp's pointer to the temp's next
+- null the temp's pointer
+- delete the temp node
