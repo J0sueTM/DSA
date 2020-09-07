@@ -426,11 +426,11 @@ head{0 | first} -> first{1 | second} -> second{2 | third} -> third{3 | null} -> 
 
 for the doubly circular linked list:
 ```
-head{0 | first} -> first{1 | second}
+head{0 | nfirst} -> first{1 | nsecond}
 
        ↑                   ↓  
 
-third{3 | head} <- second{2 | third}
+third{3 | nhead} <- second{2 | nthird}
 ```
 
 ### insert at a doubly linked list
