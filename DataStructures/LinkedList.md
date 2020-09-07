@@ -363,3 +363,281 @@ The steps can be explained as follow:
 - Turn prevTemp's pointer to the temp's next
 - null the temp's pointer
 - delete the temp node
+
+## Doubly Linked List
+
+A doubly linked list can be both a single linked list or a circular linked list, the difference is that a doubly linked list's nodes have pointers for both next node and the previous node
+
+### creating a doubly linked list
+
+```
+class Node
+    integer data
+    Node next = null
+    Node prev = null
+
+    Node(integer data):
+        this.data = data
+end
+
+//single linked list
+Node head = new Node(0)
+Node first = new Node(1)
+Node second = new Node(2)
+Node third = new node(3)
+
+head.next = first
+
+first.next = second
+first.prev = head
+
+second.next = third
+second.prev = first
+
+third.prev = second
+
+//circular linked list
+Node nhead = new Node(0)
+Node nfirst = new Node(1)
+Node nsecond = new Node(2)
+Node nthird = new Node(3)
+
+nhead.next = nfirst
+nhead.prev = nthird
+
+nfirst.next = nsecond
+nfirst.prev = nhead
+
+nsecond.next = nthird
+nsecond.prev = nfirst
+
+nthird.next = nhead
+nthird.prev = nsecond
+
+``` 
+
+So far, we've created this:
+
+for the doubly single linked list:
+
+```
+head{0 | first} -> first{1 | second} -> second{2 | third} -> third{3 | null} -> null
+```
+
+for the doubly circular linked list:
+```
+head{0 | first} -> first{1 | second}
+
+       ↑                   ↓  
+
+third{3 | head} <- second{2 | third}
+```
+
+### insert at a doubly linked list
+
+```
+class Node
+    integer data
+    Node next = null
+    Node prev = null
+
+    Node(integer data):
+        this.data = data
+end
+
+function insertAtStart(Node n, int value):
+    if n.next is null:
+        return
+
+    Node temp = n
+    Node newNode = new Node(value)
+    newNode.next = temp.next
+    if temp.next is not null:
+        temp.next.prev = newNode
+    newNode.prev = temp
+    temp.next = newNode
+end
+
+function insertAtKey(Node n, int value, int key):
+    if n.next is null:
+        return
+
+    Node temp = n.next
+    while temp is not null and temp is not n and temp.data is not key:
+        temp = temp.next
+
+    if temp is null or temp is n:
+        return
+
+    Node newNode = new Node(value)
+    newNode.next = temp.next
+    newNode.prev = temp
+    temp.next = newNode
+end
+
+function printLinkedList(Node n):
+    if n.next is null:
+        return
+
+    Node temp = n.next
+    while temp is not null and temp is not n:
+        write(temp.data)
+        temp = temp.next
+end
+
+//single linked list
+Node head = new Node(0)
+Node first = new Node(1)
+Node second = new Node(2)
+Node third = new node(3)
+
+head.next = first
+
+first.next = second
+first.prev = head
+
+second.next = third
+second.prev = first
+
+third.prev = second
+
+//circular linked list
+Node nhead = new Node(0)
+Node nfirst = new Node(1)
+Node nsecond = new Node(2)
+Node nthird = new Node(3)
+
+nhead.next = nfirst
+nhead.prev = nthird
+
+nfirst.next = nsecond
+nfirst.prev = nhead
+
+nsecond.next = nthird
+nsecond.prev = nfirst
+
+nthird.next = nhead
+nthird.prev = nsecond
+
+printLinkedList(head)
+printLinkedList(nhead)
+
+insertAtStart(head, value)
+insertAtKey(head, value, key)
+
+printLinkedList(head)
+printLinkedList(nhead)
+
+removeAtKey(head, key)
+
+printLinkedList(head)
+printLinkedList(nhead)
+```
+
+All the processes can be explained as follow:
+
+**Insert at start**
+
+- Check if the next node of the given head isn't null:
+    * return
+- Create temporary node that stores the given head node
+- Create new node that stores the given value
+- Turn the new node's next pointer to the temporary node's next pointer
+- Check if the next node of the temporary node isn't null:
+    - Turn the previous node of the next node of the temporary node the newNode
+- Turn the next node of the temporary node the newNode
+
+### delete node from doubly linked list
+
+```
+class Node
+    integer data
+    Node next = null
+    Node prev = null
+
+    Node(integer data):
+        this.data = data
+end
+
+function removeAtKey(Node n, int key):
+    if n.next is null:
+        return
+
+    Node temp = n
+    while temp is not null and temp is not n and temp.data is not key:
+        temp = temp.next
+
+    if temp is null or temp is n:
+        return
+
+    if temp.next is not null:
+        temp.next.prev = temp.prev
+    temp.prev.next = temp.next
+    temp.next.prev = temp.prev
+    
+    delete temp
+end
+
+function printLinkedList(Node n):
+    if n.next is null:
+        return
+
+    Node temp = n.next
+    while temp is not null and temp is not n:
+        write(temp.data)
+        temp = temp.next
+end
+
+//single linked list
+Node head = new Node(0)
+Node first = new Node(1)
+Node second = new Node(2)
+Node third = new node(3)
+
+head.next = first
+
+first.next = second
+first.prev = head
+
+second.next = third
+second.prev = first
+
+third.prev = second
+
+//circular linked list
+Node nhead = new Node(0)
+Node nfirst = new Node(1)
+Node nsecond = new Node(2)
+Node nthird = new Node(3)
+
+nhead.next = nfirst
+nhead.prev = nthird
+
+nfirst.next = nsecond
+nfirst.prev = nhead
+
+nsecond.next = nthird
+nsecond.prev = nfirst
+
+nthird.next = nhead
+nthird.prev = nsecond
+
+printLinkedList(head)
+printLinkedList(nhead)
+
+removeAtKey(head, key)
+
+printLinkedList(head)
+printLinkedList(nhead)
+```
+
+The explanation:
+
+- Check if the next node of the given head node isn't null
+- Create temporary node that stores the next node of the given head node
+- Check if the temporary node is not null and the temporar node is not the given head node and the data of the temporary node is not the key:
+    - Turn the temporary node the next node of the temporary node
+- Check if the next node of the temporary node isn't null:
+    - Tuen the previous node of the next node of the temporary node the previous node of the temporary node
+- Turn the next node of the previous node of the temporary node the next node of the temporary node
+- Delete the temporary node
