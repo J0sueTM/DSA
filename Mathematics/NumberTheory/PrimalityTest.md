@@ -36,15 +36,10 @@ isPrime(input())
 
 The brute force method, as it's name says, uses iteration to compare numbers until the desired number, if all of them can't divide the passed number, then it's a prime
 
-1 - **Verify if the number is less or equal to 1** There are not negative prime numbers, also 0 and 1 are not prime
-    * Return false
-2 - **Verify if the number is less or equal to 3** We already checked 0 and 1, so this condition checks if the number is whether 2 or 3. Both 2 and 3 are prime
-    * Return true
-3 - **Verify if the remainder of the number by 2 is 0 or the remainder of the number by 3 is 0** By checking if the number is a multiple of 2, we remove all the even numbers. By checking  less or equal to 3** We already checked 0 and 1, so this condition checks if the number is whether 2 or 3. Both 2 and 3 are prime
-    * Return true
-4 - **Verify if the remainder of the number by 2 is 0 or the remainder of the number by 3 is 0** By checking if the number is a multiple of 2, we remove all the even numbers. By checking if the number is a multiple of 3, we remove all the numbers that precede primes (primes also can be expressed as 6 * k + i)
-
-5 - **Iterate from 5 to power of number by adding 6)**
+- **Verify if the number is less or equal to 1** There are not negative prime numbers, also 0 and 1 are not prime
+- **Verify if the number is less or equal to 3** We already checked 0 and 1, so this condition checks if the number is whether 2 or 3. Both 2 and 3 are prime
+- **Verify if the remainder of the number by 2 is 0 or the remainder of the number by 3 is 0** By checking if the number is a multiple of 2, we remove all the even numbers. By checking  less or equal to 3** We already checked 0 and 1, so this condition checks if the number is whether 2 or 3. Both 2 and 3 are prime
+- **Verify if the remainder of the number by 2 is 0 or the remainder of the number by 3 is 0** By checking if the number is a multiple of 2, we remove all the even numbers. By checking if the number is a multiple of 3, we remove all the numbers that precede primes (primes also can be expressed as 6 * k + i)
+- **Iterate from 5 to power of number by adding 6)**
     * **Check if the number % i is 0 or n % i + 2 is 0**
-
 6 - Finally, if we got untill here, so there's no divisors for number
