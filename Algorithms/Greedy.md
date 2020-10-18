@@ -8,6 +8,6 @@ Greedy is simple, fast and easy to implement. However, since it **always** retur
 
 ## Implementation
 
-Greedy can be implemented with both iteration and recursion, you can find more about on the implementation directory
+Greedy can be implemented with both iteration and recursion, you can find more about on the implementation directory.
 
 If you want to solve some by your own, [here you go](https://a2oj.com/category?ID=56)

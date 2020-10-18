@@ -2,7 +2,7 @@
  *
  * Problem: https://codeforces.com/problemset/problem/155/A
  *
- */
+ * */
 
 #include <bits/stdc++.h>
 

@@ -2,7 +2,7 @@
  *
  * Problem: https://codeforces.com/problemset/problem/34/B
  *
- */
+ * */
 import java.util.Scanner;
 
 public class Ex01 {
