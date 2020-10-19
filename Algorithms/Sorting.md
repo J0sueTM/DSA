@@ -68,16 +68,15 @@ The Selection sort algorithm works by iterating through the elements, choosing t
 
 ```
 function insertSort(integer array[] elements):
-	integer prev = 0
-	
 	for i = 1 in range elements.size():
+		act = arr[i]
 		prev = i - 1
 		
-		while prev >= 0 and arr[prev] > i:
+		while prev >= 0 and arr[prev] > act:
 			arr[prev + 1] = arr[prev]
 			prev -= 1
-		
-		arr[j + 1] = i
+			
+		arr[prev + 1] = act
 endfunction
 
 integer array[] elements = input()
@@ -90,3 +89,64 @@ for element in elements:
 **Explanation**
 
 The insert sort algorithm works by iterating through the elements, starting at the second one, marking it and the previous. Then loop until previous is less than 0, changing the elements' positions one forward.
+
+### Merge sort
+
+```
+function merge(int array[] elements, integer left, integer middle, integer right):
+	integer leftSize = middle - left + 1
+	integer rightSize = right - middle
+	
+	integer array[] leftTemp
+	integer array[] rightTemp
+	
+	for i in range leftSize:
+		leftTemp[i] = elements[left + i]
+	for i in range rightSize:
+		rightTemp[i] = elements[(middle + 1) + i]
+
+	integer leftIndex = 0
+	integer rightIndex = 0
+	integer mergeIndex = left
+	
+	while leftIndex < leftSize and rightIndex < rightSize:
+		if leftTemp[leftIndex] <= rightTemp[rightIndex]:
+			arr[mergeIndex] = leftTemp[leftIndex]
+			leftIndex += 1
+		else:
+			arr[mergeIndex] = rightTemp[rightIndex]
+			rightIndex += 1
+		mergeIndex += 1
+		
+	while leftIndex < leftSize:
+		arr[mergeIndex] = leftTemp[leftIndex]
+		leftIndex += 1
+		mergeIndex += 1
+	while rightIndex < rightSize:
+		arr[mergeIndex] = rightTemp[rightIndex]
+		rightIndex += 1
+		mergeIndex += 1
+endfunction
+
+function mergeSort(int array[] elements, integer left, integer right):
+	if left >= right:
+		return
+		
+	integer middle = (left + right) / 2
+	
+	mergeSort(elements, left, middle)
+	mergeSort(elements, middle + 1, right)
+	
+	merge(elements, left, middle, right)
+endfunction
+
+integer array[] elements = input()
+mergeSort(elements)
+
+for element in elements:
+	print(element)
+```
+
+**Explanation**
+
+Divide the array in until there's just one single element, then merge then together sorting them
