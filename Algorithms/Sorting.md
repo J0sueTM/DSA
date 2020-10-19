@@ -15,6 +15,8 @@ There are a lot of sorting algorithms. For learning purposes, we'll cover just t
 
 If you want to study the other sorting algorithms, [here you go](https://www.geeksforgeeks.org/sorting-algorithms/).
 
+There are also built in sorting functions in which language. You can find them in the implementations folder.
+
 ### Bubble sort
 
 ```
