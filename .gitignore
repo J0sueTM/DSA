@@ -1,19 +1,25 @@
-" by J0sueTM for the project Competitive-Programming
+" File: .gitignore
 
-"blacklist everything
+blacklist everything
 *
+
+" do not blacklist asm files
+!*.asm
+
+" "do not blacklist c files
+!*.c
 
 " do not blacklist cpp files
 !*.cpp
-
-" do not blacklist markdown files
-!*.md
 
 " do not blacklist python files"
 !*.py
 
 " do not blacklist java files
 !*.java
+
+" do not blacklist markdown files
+!*.md
 
 " do not blacklist directories
 !*/
