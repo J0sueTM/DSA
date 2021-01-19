@@ -33,11 +33,11 @@ class _Stack {
         if (isEmpty())
             return Integer.MIN_VALUE; // stack underflow
 
-        StackNode tempStackNode = currentTopNode.nextNode;
+        StackNode tempStackNode = currentTopNode;
+        currentTopNode = currentTopNode.nextNode;
         int poppedStackNodeData = tempStackNode.data;
-        currentTopNode = null;
-        currentTopNode = tempStackNode;
 
+        tempStackNode = null;        
         return poppedStackNodeData;
     }
 
@@ -57,9 +57,9 @@ public class Stack {
         testStack.pushStackNode(52);
         testStack.pushStackNode(20);
 
-        System.out.println(testStack.popStackNode());
-
         System.out.println(testStack.isEmpty() ? "empty" : "not empty");
+
+        System.out.println(testStack.popStackNode());
 
         System.out.println(testStack.topStackNode());
     }
