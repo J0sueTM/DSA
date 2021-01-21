@@ -11,7 +11,7 @@ class stack:
         self.top_stack_node = self.root_node
 
     def is_empty(self):
-        if self.top_stack_node == self.root_node:
+        if self.top_stack_node is self.root_node:
             return True
         else:
             return False
@@ -33,13 +33,13 @@ class stack:
 
             return popped_stack_node_data
         else:
-            return sys.minint # stack underflow
+            return (-sys.maxsize) # stack underflow
 
     def top_stack_node_data(self):
         if not self.is_empty():
             return self.top_stack_node.data
         else:
-            return sys.minint # stack underflow
+            return (-sys.maxsize) # stack underflow
 
 test_stack = stack()
 
