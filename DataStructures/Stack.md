@@ -12,7 +12,60 @@ In a more counter-intuitive idea, you can think about stacks like a "stack of pl
 
 ## Implementation
 
-The most used methods for implementing a stack are array and linked list. For efficiency and the ability to resize the stack, I'll be using linked list.
+There are two general methods for implementing the stack: array and lined list
+
+*Array*
+
+```
+class Stack:
+    function create(integer stackCapacity):
+        this.stackArray = new array[stackCapacity + 1]
+        this.stackCurrentTop = 0
+        this.stackSize = stackCapacity
+    end
+
+    function isEmpty():
+        return this.stackCurrentTop == 0
+    end
+
+    function isFull():
+        return this.stackCurrentTop == this.stackSize - 1;
+    end
+
+    function push(integer newData);
+        if isFull():
+            return 2147483648 # stack overflow
+        end
+
+        ++this.stackCurrentTop
+        this.stackArray[this.stackCurrentTop] = newData
+
+        return this.stackArray[this.stackCurrentTop]
+    end
+
+    function pop():
+        if isEmpty():
+            return -2147483648 # stack underflow
+        end
+
+        integer poppedData = this.stackArray[this.stackCurrentTop]
+        this.stackArray[this.stackCurrentTop] = 0
+        --this.stackCurrentTop
+
+        return poppedData
+    end
+
+    function top():
+        if isEmpty():
+            return -2147483648 # stack underflow
+        end
+
+        return this.stackArray[this.stackCurrentTop]
+    end
+end
+```
+
+*Linked List*
 
 ```
 class Node:
