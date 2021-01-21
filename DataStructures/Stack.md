@@ -18,7 +18,7 @@ There are two general methods for implementing the stack: array and lined list
 
 ```
 class Stack:
-    function create(integer stackCapacity):
+    Stack(integer stackCapacity):
         this.stackArray = new array[stackCapacity + 1]
         this.stackCurrentTop = 0
         this.stackSize = stackCapacity
@@ -72,7 +72,7 @@ class Node:
     integer data
     Node next
 
-    function __init__(_data):
+    Node(_data):
         this.data = _data
         this.next = null
     end
