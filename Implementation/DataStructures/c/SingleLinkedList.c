@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 struct linked_list_node {
   int data;
@@ -23,8 +24,12 @@ struct linked_list_node *insert_node_at_middle(struct linked_list_node **root_li
     return NULL;
 
   struct linked_list_node *temp_linked_list_node = (*root_linked_list_node)->next_linked_list_node;
-  while (temp_linked_list_node != NULL || temp_linked_list_node->data != prev_node_to_insert_key)
+  while (temp_linked_list_node != NULL) {
+    if (temp_linked_list_node->data == prev_node_to_insert_key)
+      break;
+
     temp_linked_list_node = temp_linked_list_node->next_linked_list_node; 
+  }
 
   if (!temp_linked_list_node)
     return NULL;
@@ -59,19 +64,29 @@ int remove_node_at_key(struct linked_list_node **root_linked_list_node, int node
     return INT_MIN;
 
   struct linked_list_node *temp_linked_list_node = *root_linked_list_node;
-  while (temp_linked_list_node->next_linked_list_node != NULL || temp_linked_list_node->data != node_to_delete_key)
-    temp_linked_list_node = temp_linked_list_node->next_linked_list_node;
+  while (temp_linked_list_node->next_linked_list_node != NULL) {
+    if (temp_linked_list_node->next_linked_list_node->data == node_to_delete_key)
+      break;
 
-  if (temp_linked_list_node->data != node_to_delete_key || temp_linked_list_node == (*root_linked_list_node))
+    temp_linked_list_node = temp_linked_list_node->next_linked_list_node;
+  }
+
+  if (!temp_linked_list_node->next_linked_list_node || temp_linked_list_node->next_linked_list_node == *root_linked_list_node)
     return INT_MIN;
 
-  free(temp_linked_list_node);
+  struct linked_list_node *temp_exchange_linked_list_node = temp_linked_list_node->next_linked_list_node;
+  temp_linked_list_node->next_linked_list_node = temp_exchange_linked_list_node->next_linked_list_node;
+
+  int removed_node_data = temp_exchange_linked_list_node->data;
+  free(temp_exchange_linked_list_node);
+
+  return removed_node_data;
 }
 
 void display_linked_list(struct linked_list_node **root_linked_list_node) {
   struct linked_list_node *temp_linked_list_node = (*root_linked_list_node)->next_linked_list_node;
   for (int i = 0; temp_linked_list_node != NULL; ++i) {
-    printf("Position %d: %d", i, temp_linked_list_node->data);
+    printf("Position %d: %d\n", i, temp_linked_list_node->data);
 
     temp_linked_list_node = temp_linked_list_node->next_linked_list_node;
   }  
@@ -98,7 +113,13 @@ int main(void) {
 
   insert_node_at_start(&root_node, 1);
   insert_node_at_end(&root_node, 3);
-  printf("%d\n", insert_node_at_middle(&root_node, 1, 2)->data);
+  insert_node_at_middle(&root_node, 1, 2);
+
+  display_linked_list(&root_node);
+
+  remove_node_at_key(&root_node, 1);
+
+  display_linked_list(&root_node);
 
   end_linked_list(&root_node);
 
