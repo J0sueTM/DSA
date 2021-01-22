@@ -44,7 +44,7 @@ void insertAtKey(Node* n, int value, int key)
     if (n->next == NULL) return;
 
     Node* temp = n->next;
-    while (temp != n && temp->data != key)
+    while (temp != NULL && temp->data != key)
         temp = temp->next;
 
     if (temp == NULL || temp == n) return;
